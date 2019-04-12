@@ -1,0 +1,44 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+    <div class="box-top-app">
+      <!-- <div id="calendar" class="col">
+          <div id="calendar_header">
+            <i class="icon-chevron-left">
+              <div class="caretIcon-left"><div class="caret-1"></div><div class="caret-2"></div></div>
+            </i>          
+              <h1></h1>
+            <i class="icon-chevron-right"> 
+              <div class="caretIcon-right"><div class="caret-1"></div><div class="caret-2"></div></div> 
+            </i>         
+          </div>
+          <div id="calendar_weekdays"></div>
+          <div id="calendar_content"></div>
+        </div> -->
+
+        <ion-calendar *ngIf="calendarLoaded" #calendar lang="en" [events]="calendarioService.currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
+
+
+
+      </div>
+
+      <div class="list-event row">
+        <h3 class="title-events-today" *ngIf="!selectedIsToday">Eventos no dia {{ currentDay }}</h3>
+        <h3 class="title-events-today" *ngIf="selectedIsToday">Eventos hoje</h3>
+        <p class="no-events" *ngIf="listEventsSelectedDay.length == 0">Nenhum evento no dia selecionado</p>
+        <ul class="col" style="list-style-type: none;padding: 0;">
+            <li class="row list-color {{ obj.color }}" *ngFor="let obj of listEventsSelectedDay">
+              <div class="col-3 date">
+                <h4>{{ obj.date }}</h4>
+                <h5>{{ monthsInPt[obj.month] }}</h5>
+              </div>
+              <hr>
+              <div class="col-7 titles">
+                <h4 class="max-lines-1">{{ obj.title }}</h4>
+                <h5 class="max-lines-1">{{ obj.description }}</h5>
+              </div>      
+            </li>
+        </ul>
+      </div> 
+
+      <calendario-eventos [monthIndex]="monthIndex" [yearIndex]="yearIndex"></calendario-eventos>
+</ion-content>

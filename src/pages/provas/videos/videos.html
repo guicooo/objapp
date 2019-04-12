@@ -1,0 +1,8 @@
+<app-title-page-prova 
+[color]="'green'" 
+[title]="titulo" 
+[valores]="appService.videos" 
+[hideTrilha]="mostrar"
+(clickEvento)="obterVideo($event)"></app-title-page-prova>
+
+<iframe *ngIf="url" [src]="url" width="96%" height="500"></iframe>

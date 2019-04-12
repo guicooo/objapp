@@ -1,0 +1,54 @@
+page-atividades {
+    .card-atividades {
+        color: $dark-obj;
+        padding: 10px 10px 10px 0px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+        img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: -10px;
+        }
+        h2 {
+            color: $dark-obj;
+            font-size: 2.1vh;
+            font-weight: bold;
+            margin: 0;
+            // margin-top: 10px !important;
+        }
+        p{
+            font-size: 2.0vh;
+            margin: 0;
+        }
+        h4 {
+            font-size: 5vh;
+            margin-bottom: -8px;
+            margin: 0;
+        }
+        h5 {
+            font-size: 1.7vh;
+            margin: 0;
+        }
+        i {
+
+        }
+    }
+    // COLORS
+    .blue {
+        border-left: 10px solid $third-obj;
+    }
+    .green {
+        border-left: 10px solid $green-obj;
+    }
+    .orange {
+        border-left: 10px solid $orange-obj;
+    }
+    .red {
+        border-left: 10px solid $red-obj;
+    }
+
+
+}

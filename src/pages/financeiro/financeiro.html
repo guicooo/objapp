@@ -1,0 +1,35 @@
+<header-obj [navCtrl]="navCtrl"></header-obj>
+<ion-content padding no-bounce >
+  <div class="box-top-app">
+      <div class="title-ico">
+          <i class="ico-financeiro"></i>
+          <h2>Secretaria Online</h2>
+        </div>
+        <content-loader id="financeiroLoader" *ngIf="loaderContent"></content-loader>
+        
+        
+        <ul class="list-financeiro col">
+            <li class="row" *ngFor="let obj of tickets"
+            (click)="goDetails(obj.id)"
+            >
+                <div  class="col-7">
+                    <h4 class="max-lines-1">{{ obj?.descricao }}</h4>
+                    <p>venc: {{ obj.detalhes.data | date: 'dd/MM/yyyy' }}</p>
+                </div>
+                <div  class="col-4 text-right no-padding">
+                    <h5
+                    [ngClass]="{
+                        'em-atraso': obj.status == 'EmAtraso',
+                        'pago': obj.status == 'Aprovado',
+                        'pendente': obj.status == 'Pendente'
+                    }"
+                    [class.green]="obj.detalhes.mesReferencia < monthCurrent && obj.detalhes.diaVencimento  <= dateCurrent  && obj.status == 'Aprovado' "
+                    [class.orange]="obj.detalhes.mesReferencia >= monthCurrent && dateCurrent >= obj.detalhes.diaVencimento  && obj.status == 'Pendente'"
+                    [class.red]="obj.detalhes.mesReferencia < monthCurrent && obj.status == 'EmAtraso' "
+                    >{{ obj?.mensalidade.valor | currency:'BRL': '1.2-2' }}</h5>
+                </div>
+                <div class="caretMenu" style="position: absolute;right: 0px; margin-top: 21px;"><div class="caret-1" style="background-color: grey;"></div><div class="caret-2" style="background-color: grey;"></div></div>
+            </li>      
+        </ul>
+        </div>
+</ion-content>

@@ -1,0 +1,33 @@
+
+
+<nav class="navdown fixed-bottom">
+  <div class="row icons">
+    <a class="col" (click)="redirecionar('prova')">
+      <img src="./assets/icon/provas-01.svg">
+    </a>
+    <a class="col" *ngIf="appService.conteudo.length > 0" (click)="redirecionar('conteudo')">
+      <img src="./assets/icon/conteudo-01.svg">
+    </a>
+    <a class="col" *ngIf="appService.videos.length > 0" (click)="redirecionar('videos')">
+      <img src="./assets/icon/exercicios-01.svg">
+    </a>
+    <a class="col" *ngIf="appService.exercicios.length > 0" (click)="redirecionar('exercicios')">
+      <img src="./assets/icon/videos-01.svg">
+    </a>    
+    <a class="col" *ngIf="appService.jogos.length > 0" (click)="redirecionar('jogos')">
+      <img src="./assets/icon/games-01.svg">
+    </a>
+    <a class="col" *ngIf="appService.textoApoio && appService.textoApoio.length > 0" (click)="redirecionar('textoApoio')">
+      <img src="./assets/icon/texto-01.svg">
+    </a>    
+    <a class="col" *ngIf="appService.questaoAtiva && ( appService.questaoAtiva.resposta || appService.questaoAtiva.alternativas )" (click)="redirecionar('resolucao')">
+      <img src="./assets/icon/resolucao-01.svg">
+    </a>
+  </div>            
+</nav>
+     
+      
+            
+            
+          
+          

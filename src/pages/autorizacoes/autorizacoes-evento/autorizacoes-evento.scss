@@ -1,0 +1,69 @@
+page-autorizacoes-evento {
+    .bg-eventos {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;  
+        height: 28vh;
+        margin-bottom: 20px;
+        margin-top: -5%;
+
+        &.passeio {
+            background-image:url(../assets/imgs/passeio.jpg);
+        }
+
+        &.reuniao {
+            background-image:url(../assets/imgs/reuniao.jpg);
+        }
+
+        &.palestra {
+            background-image:url(../assets/imgs/palestra.jpg);
+        }
+
+        .mask {
+            background-color: $primary-obj;   
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+        }  
+        h3{
+            color: white;
+            font-weight: bold;
+            margin-top: -17vh;
+            z-index: 0;
+            margin-left: 10px;
+            font-size: 4vh;
+        }
+    }
+    
+    .eventos {
+        color: $dark-obj;
+        h5 {
+            font-weight: bold;
+            font-size: 4vh;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 2.5vh;
+            margin-bottom: 5px;
+        }
+        hr{
+            border-top: 3px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .bot-red-line {
+        &:hover {
+            color: #FF5252;
+            background-color: transparent;
+            border: 2px solid #FF5252;
+        }
+    }
+
+    .bot-green {
+        &:hover {
+            background-color: #99CC48;
+            color: white;
+        }
+    }
+
+}

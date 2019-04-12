@@ -1,0 +1,467 @@
+
+// CONTAINER CENTER
+
+.box-center-app {
+    height: 90%;
+    position: absolute;
+    width: 100%;
+    padding-top: 19%;
+    padding-left: 20px;
+    padding-right: 20px;
+    // padding-bottom: 50px;
+    // margin-top: 190px;
+    @media #{#{$iphone4}}{padding-top: 18%!important;}
+    @media #{#{$iphone5}}{padding-top: 26%; height: 88%;}
+}
+.box-top-app {
+    width: 100%;
+    padding-top: 26%;
+    margin-bottom: 18%;
+    @media #{#{$iphone4}}{padding-top: 24%!important;}
+    @media #{#{$iphone5}}{padding-top: 26%;}  
+    @media #{#{$iphoneX}}{padding-top: 33%;}  
+}
+
+ion-navbar {
+    height: 14vh;  
+    i {
+        color:white;
+        font-size: 25px;
+    }
+}
+
+.logo-obj {
+    width: 180px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+
+
+ion-header {
+    .toolbar-background {
+        @extend %gradiente;
+        // background-color: $primary-obj;
+    }
+}
+
+
+h1, .h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    display: none;
+}
+
+// voltar
+
+[class*="arrow-back"] {
+
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    &:after, &:before {
+      content: "";
+      box-sizing: border-box;
+    }
+    &:before{
+        right: 0;
+        top: -2px;
+        position: absolute;
+        height: 3px;
+        box-shadow: inset 0 0 0 32px;
+        transform: rotate(-45deg);
+        width: 19px;
+        transform-origin: right top;
+      }
+      &[class*="-left"]{
+        transform: rotate(-135deg);
+        margin-left: 11px;
+        right: 6px;
+    }
+        &[class*="-right"]{
+        transform: rotate(45deg);
+        margin-right: 11px;
+        left: 6px;
+    }
+  }
+
+.sair {
+    animation: sair 0.5s ease-in forwards;
+}
+
+@-webkit-keyframes sair {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100px); }
+}
+@keyframes sair {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100px); }
+}
+
+@-webkit-keyframes voltar {
+    0% {  transform: translateY(100px); }
+    100% { transform: translateY(0); }
+}
+@keyframes voltar {
+    0% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
+}
+
+.voltar {
+    animation: voltar 0.5s ease-in forwards;
+}
+
+.hide-list {
+    display: none;
+}
+.show-list {
+    display: block;
+}
+
+
+
+
+.info-atendimento {
+    background-color: $primary-light-obj;
+    padding: 5px 12px;
+    h3 {
+        color: $primary-obj;
+        font-size: 19px;
+    }
+    p{
+        margin-bottom: 5px;
+        font-size: 2.6vh;
+    }
+    h2 {
+        color: $primary-obj;
+        font-size: 25px; 
+    }
+    .line-ou {
+        display: inline-flex;
+        color: $third-obj;
+        hr {
+            width: 135px;
+            margin-top: 13px;
+            margin-right: 20px;
+            margin-left: 20px;
+            border: 1px solid $third-obj;
+            @media #{#{$mobile}}{
+                width: 74px;
+            }
+        }
+    }
+}
+
+.atendimento-form {
+    background-color: $primary-light-obj;
+    padding: 10px 0px;
+
+}
+
+// MENUUUUUUUUU
+
+
+.header-menu {
+    @extend %gradiente-menu;
+    // margin-top: -5px;
+    h3 {
+        color: white;
+        font-size: 3.5vh;
+        margin: 1vh;
+        font-weight: normal;
+    }
+    .circle-off {
+        position: relative;
+        background-color: #FF5252;
+        border-radius: 70%;
+        top: 22px;
+        right: 20px;
+        float: right;
+        text-align: center;
+        padding: 5px 7px 0px 7px;
+        .ico-off{
+            font-size: 19px;
+            color: white;
+        }
+    }
+    .ico-config{
+        position: relative;
+        border-radius: 70%;
+        font-size: 25px;
+        top: 14px;
+        left: 15px;
+        color: white;
+        float: left;
+        padding: 10px;
+    }    
+    .circle {
+        border-radius: 50%;
+        width: 19vh;
+        height: 19vh;
+        overflow: hidden;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        @media #{#{$iphone5}}{margin-top: 3%;}
+        @media #{#{$iphone4}}{margin-top: 0px !important;}
+    }
+    
+    .circle img {
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.main-menu {
+    background-color: $primary-obj !important;
+}
+.menu-list {
+    padding: 0px 10px;
+    @media #{#{$iphone4}}{margin-top: 0vh !important;}
+    @media #{#{$iphone5}}{margin-top: 2vh;}
+    margin-top: 5vh;
+    list-style: none;
+    li {
+        padding: 1.2vh;
+        font-size: 3vh;
+        margin-bottom: 0.6vh;
+        background-color: #3a6ba0;
+        color: white;
+        border-bottom: 0 !important;
+        i {
+            margin-right: 5px;
+            font-size: 3.3vh;
+            position: relative;
+            top: 3px;
+        }
+
+        .icon-ionic {
+            margin-right: 5px;
+            font-size: 3.5vh;
+            top: 3px;
+            position: relative;
+        }
+    }
+
+}
+
+    // CARET
+    .caretMenu {
+        margin-top: 8%;
+        opacity: .4;
+        float: right;
+        @media #{#{$iphone5}}{margin-top: 7%;}
+        @media #{#{$iphone4}}{margin-top: 6% !important;}
+        %caret {
+            width: 12px;
+            height: 2px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 100px;
+
+        }
+        .caret-1{
+            @extend %caret;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            position: relative;
+            top: 0px;
+        }
+        .caret-2{
+            position: relative;
+            top: 11px;
+            @extend %caret;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg) rotate(0deg) translate(-15px, -15px);
+        }
+   
+    }
+
+    .father-circle {
+        width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @media #{#{$iphone5}}{width: 180px;}
+        
+        .number-circle {
+            position: absolute;
+            transform: translate(-50%, 93%);
+            font-size: 56px;   
+            font-weight: bold;  
+  
+            @media #{#{$iphone5}}{
+                font-size: 42px;  
+            }      
+               
+        }
+    }
+
+
+.container-loader {
+    background: #fff;
+    border-radius: 5px;
+    max-width: 769px;
+    margin: 0 auto;
+    }
+    .background {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: preloadAnimation;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+    display: flex;
+    min-height: 100px;
+    }
+    .right {
+    flex: 1;
+    }
+    .image {
+    width: 120px;
+    height: 50px;
+    background: transparent;
+    }
+    .bar {
+    height: 22px;
+    background: transparent;
+    position: relative;
+    width: 100%;
+    }
+    .bar::before {
+    position: absolute;
+    left: 0;
+    height: 22px;
+    // width: 2rem;
+    content: "";
+    background: #fff;
+    }
+    .bar::after {
+    position: absolute;
+    right: 0;
+    height: 22px;
+    content: "";
+    background: #fff;
+    }
+    .bar.medium::after {
+    width: 50%;
+    }
+    .bar.small::after {
+    width: 75%;
+    }
+    .mask {
+    background: #fff;
+    width: 100%;
+    }
+    .thick {
+    height: 1.5rem;
+    }
+    .thin {
+    height: 0.5rem;
+    }
+    @-moz-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @-webkit-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @-o-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+}
+      
+/// MENU PROVAS
+.menu-provas{
+    ion-content {
+        background-color: $obj-provas;
+    }
+    ion-list {
+        padding: 25px;
+    }
+    ion-item {
+        background-color: transparent;
+        padding: 0;
+        color: white;
+        font-size: 3vh;
+    }
+    ion-label {
+        
+    }
+    h1{
+        font-size: 3vh;
+    }
+    h2{
+        font-size: 2.5vh;
+        font-weight: normal;
+    }
+    .menutitle{
+        padding: 0;
+        text-align: center;
+        color:white;
+        padding: 0px 25px;
+    }
+    .list-ios .item-block .item-inner {
+        border-bottom: 0;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom: 0;
+    }
+    .list-ios > .item-block:first-child{
+        border-top: 0;
+    }
+    .circle-prova {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 50%;
+        margin-top: 5px;
+        &.red{background-color: $red-obj;}
+        &.green{background-color: $green-obj;}
+        &.yellow{background-color: $yellow-obj;}
+    }
+    b{    
+        margin-left: 40px;
+    }
+
+}

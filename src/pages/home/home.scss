@@ -1,0 +1,57 @@
+page-home {
+    @import "./app/scss/default";
+  
+  .cont-bg-home {
+      background-color: $primary-obj;
+      z-index: -10;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img {
+      max-width: none;
+      height: 100%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      }
+  }
+  
+  .bg-home {
+      background-color: $primary-obj;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.8;
+      z-index: -9;
+  }
+  .text-home {
+      color: white;
+      p {
+          margin: 5px;
+          font-size: 2.5vh;
+      }
+      h3{
+          font-size: 4vh;
+          strong {
+              color: $yellow-obj;
+          }
+      }
+      h4{
+         margin-top: 3vh;
+         font-size: 3vh;
+      }
+      h5{
+         font-size: 2vh;  
+      }        
+  }
+      ion-header {
+          z-index: 2;
+      }
+      .toolbar-background {
+          background: transparent!important;
+          border: none!important;
+      }       
+  };

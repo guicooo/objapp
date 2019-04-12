@@ -1,0 +1,121 @@
+page-usuario {
+.box-top-app {
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.header-user {
+    @extend %gradiente;
+    height: 13vh;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 12%;
+    span {
+        font-size: 2.0vh;
+        color: $dark-obj;
+    }
+    // input {
+    //     opacity: 0;
+    //     background-color: transparent;
+    //     border-radius: 50%;
+    //     width: 25vh;
+    //     height: 25vh;
+    //     overflow: hidden;
+    //     position: relative;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
+    .circle {
+        border-radius: 50%;
+        width: 20vh;
+        height: 20vh;
+        overflow: hidden;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        
+      }
+      
+      .circle img {
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+
+}
+.body-user {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 60px;
+    margin-top: 66%;
+    h2 {
+        color: $primary-obj;
+        font-size: 3.6vh;
+        font-weight: bold;
+        margin: 1vh 0px;
+    }
+    p{
+        margin-bottom: 1.5vh;
+        font-size: 2.5vh;
+    }
+    button {
+        width: 80%;
+        i {
+            font-size: 3vh;
+            margin-right: 5px;
+            position: relative;
+            top: 4px;
+        }
+    }
+
+}
+.list-user {
+    position: relative;
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 20px;
+}
+
+// .logout {
+//     background-color: $red-obj;
+//     width: 100%;
+//     position: absolute;
+//     bottom: 0;
+//     padding: 13px 0px 0px 0px;
+//     border-radius: 0;
+//     margin: 0;
+//     .ico-off{
+//         color: white;
+//         font-size: 30px;
+//     }
+// }
+
+
+}
+
+
+// .list-menu-item {
+//     padding: 0.3vh 20px;
+//     background-color: $dark-light-obj;
+//     width: 100%;
+//     margin-bottom: 5px;
+//     i {
+//         font-size: 3.9vh;
+//         color: #606060;
+//         margin-left: 14px;
+//         margin-top: 10px;
+//     }
+//     h4 {
+//         color: $dark-obj;
+//         font-weight: 600;
+//         font-size: 2.5vh;
+//         margin-top: 18px;
+//         margin-left: 10px;
+//     }
+// }
+
+

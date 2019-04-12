@@ -1,0 +1,111 @@
+page-listagem-alunos {
+    .list-alunos {
+        margin-top: 20px;
+        margin-bottom: 73px;
+        // ion-item {
+        //     padding: 0;
+       
+        // }
+        .title {
+            margin-bottom: 20px;
+            .select-obj {
+                font-size: 20px;
+                height: 40px;
+                background-color: transparent !important;
+            }
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+    
+        }
+        .select-serie{
+            font-size: 20px;
+            height: 40px;
+            background-color: transparent !important;
+        }
+        .number-cont {
+            font-size:2.4vh;
+            margin: 10px 0px;
+            float: right;
+            background-color: $red-obj;
+            border-radius: 50%;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding-top: 3px;
+        }
+    
+        ul {
+            padding: 0;
+            margin: 0px 15px;
+            li {
+                margin-bottom: 20px;
+                background-color: white;
+                -webkit-box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+                box-shadow: 5px 3px 18px -3px rgba(0, 0, 0, 0.5);
+                .circle {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    margin-top: 13px;
+                    margin-left: 4px;
+                
+                }
+                .orange {
+                    background-color: $orange-obj;
+                }
+                .red {
+                    background-color: $red-obj;
+                }
+                .green {
+                    background-color: $green-obj;
+                }  
+    
+                .title-li {
+                    padding: 3px 0px;
+                    h4 {
+                        font-weight: bold;
+                        font-size: 2.3vh;
+                        margin-bottom: 3px;
+                        color: $primary-obj;
+                    }
+                    p{
+                        font-size: 2vh;
+                        margin-bottom: 2px;
+                    }
+                }
+                .car {
+                    background-color: $green-obj;
+                    color: white;
+                    padding: 12px 0px 0px 0px;
+                    i{
+                        font-size: 35px;
+                    }
+                }
+                .disabled {
+                    background-color: $dark-light-obj!important; 
+                    color: $dark-obj;
+                }
+            }
+        }
+    }
+    .header-chegando {
+        i{
+        font-size: 70px;  
+        color: $primary-obj;;  
+        }
+        p{
+            margin: 0;
+            margin-top: -20px;
+            color: $dark-obj;;
+        }
+        text-align: center;
+        margin-top: 60px;
+        font-size: 17px;
+        margin-bottom: 60px;
+    }
+}

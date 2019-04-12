@@ -1,0 +1,21 @@
+<ion-header no-bounce  class="header-app" no-border>
+  <ion-navbar hideBackButton>
+    <!-- <ion-icon class="ico-burguer" name="ico-burguer" *ngIf="!voltar" (click)="toggleMenu()"></ion-icon> -->
+    <i class="ico-burguer" *ngIf="!voltar" (click)="toggleMenu()"></i>
+
+    <i class="arrow-back" *ngIf="voltar" (click)="voltarPagina()"></i>
+    <img class="logo-obj"  src="assets/img/logo-objetivo.svg" alt="logo objetivo">
+    
+    <div class="ico-notification-alert active" (click)="openNotificacoes()">   
+      <div class="notification"></div>
+      <div class="animation">
+          <!-- <ion-icon name="ico-notification" class="ico-animation"></ion-icon> -->
+          <i class="ico-notification ico-animation"></i>
+      </div>
+    </div>
+    
+  </ion-navbar>
+</ion-header>
+
+         
+ 

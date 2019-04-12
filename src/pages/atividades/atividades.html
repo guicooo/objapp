@@ -1,0 +1,50 @@
+             
+<header-obj [navCtrl]="navCtrl"></header-obj>
+<ion-content padding no-bounce >
+  <div class="box-top-app">
+    <div class="title-ico">
+        <i class="ico-atividades"></i>
+        <h2>Atividades</h2>
+      </div>     
+
+      <content-loader *ngIf="loaderContent"></content-loader>
+
+      <div class="card-atividades {{ color }}"
+      *ngFor="let obj of atividades; let i = index"
+      [ngClass]="changeCollor(i)">
+
+        <div class="row">
+          <div class="col-6" style="padding-right: 0;">
+            <img [src]="obj.avatar" onerror="this.src = 'assets/imgs/atividades-default.jpg';">
+          </div>
+          <div class="col-6" style="padding-left: 10px;">
+            <h2>{{ obj?.titulo }}</h2>
+            <p><i>{{ obj?.local.casa }}</i></p>
+            <p>Valor: <b>{{ obj?.detalhes.notaMaxima }}</b></p>
+            <p>{{ obj?.disciplina }}</p>
+            <p>{{ obj?.detalhes.tutor }}</p>
+          </div>          
+        </div>
+        <div class="row">
+          <div class="col-3 text-center" style="padding-right: 0; padding-left: 19px;">
+            <h4>{{ obj?.diaEvento }}</h4>
+            <h5>{{ obj?.mesEvento }}</h5>
+          </div>
+          <div class="col-9">
+            <p>{{ obj?.descricao }}</p>
+          </div>          
+        </div>    
+        <!-- <div class="row">
+          <div class="col text-right">
+            <i class="ico-atendimento"></i>
+            <i class="ico-atendimento"></i>
+            <i class="ico-atendimento"></i>
+          </div>
+        </div>               -->
+      </div>
+
+
+
+    <!-- <collapse-color [listLi]="data"></collapse-color> -->
+  </div> 
+</ion-content>

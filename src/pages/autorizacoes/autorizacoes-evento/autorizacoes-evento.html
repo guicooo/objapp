@@ -1,0 +1,36 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce >
+<div class="box-top-app">
+      
+    <div *ngFor="let obj of arrAuthorizations" [id]="id">
+        <div *ngIf="obj.id == id">
+
+            <div class="row bg-eventos"
+                [ngClass]="{
+                    'passeio': obj?.notificacao.tipo == 'passeio',
+                    'reuniao': obj?.notificacao.tipo == 'reuniao',
+                    'palestra': obj?.notificacao.tipo == 'palestra'
+                }">
+                <div class="mask"></div>
+                <h3>{{ obj?.notificacao.titulo }}</h3>
+            </div>
+
+            <section class="eventos col-12">
+                <h5>{{ obj?.notificacao.diaEvento }} de {{ obj?.notificacao.mesEvento }}</h5>
+                <p><b>Saída: </b>{{ obj?.duracao.inicio }}</p>
+                <p><b>Retorno: </b>{{ obj?.duracao.fim }}</p>
+
+                <hr>
+                
+                <p>{{ obj?.notificacao.descricao }}</p>
+            </section>
+            <div class="col-12" style="margin-left: auto; margin-top: 20px;">
+                <button class="bot-red-line bot" style="width: 47%; margin-right: 10px;" (click)="naoAutorizarAluno()">Não autorizo</button>
+
+                <button  class="bot-green bot" style="width: 47%" (click)="autorizarAluno()">Autorizo</button>
+            </div>
+    
+        </div> <!-- end *ngIf -->
+    </div> <!-- end *ngFor -->
+</div>
+</ion-content>

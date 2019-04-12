@@ -1,0 +1,29 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce >
+  <div class="row align-items-center justify-content-md-center box-center-app">
+    <div class="col">
+
+        <div *ngFor="let obj of ticketDetail">
+            <div *ngIf="obj.id == id">
+              <div class="detalhes-financeiro margin-40">
+                <h2 class="text-center margin-20"> Boleto mensal</h2>
+                <p>Vencimento: {{ obj?.detalhes.data | date: 'dd/MM/yyyy' }}</p>
+                <p>Faturamento: {{ obj?.detalhes.lancamento | date: 'dd/MM/yyyy' }}</p>
+                <p>Valor: {{ obj?.mensalidade.valor | currency:'BRL': '1.2-2' }}</p>
+                <p>Parcela: {{ obj?.detalhes.mesReferencia }}</p>
+                <p>Situação: <b>{{ obj?.status == 'EmAtraso' ? 'Não pago' : '' ||
+                                   obj?.status == 'Aprovado' ? 'Pago' : '' ||
+                                   obj?.status == 'Pendente' ? obj?.status : ''| uppercase }}
+                                </b></p>
+              </div>
+          
+              <div class="text-center margin-40" *ngIf="obj?.status != 'Aprovado'">
+                <button style="width: 80%; margin-top: 20px;" class="text-uppercase bot-primary bot" (click)="segundaViaBoleto()"> 2º via do boleto</button>
+                <button style="width: 80%;" class="text-uppercase bot-green bot" (click)="showConfirm()"> pagar</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+  </div> 
+</ion-content>

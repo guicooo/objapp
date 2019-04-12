@@ -1,0 +1,10 @@
+
+$invalid: rgb(255, 231, 231);
+
+.inputInvalid {
+    -webkit-animation: shake 0.6s;
+    animation: shake 0.6s; 
+    // background-color: $invalid;
+    border-bottom: 1px solid #FF5252 !important;
+}
+

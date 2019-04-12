@@ -1,0 +1,29 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+  <div  class="box-top-app">
+    
+      <ul class="menu-atendimento">
+          <li class="atendimento-item" *ngFor="let p of atendimento" (click)="openPageAtendimento(p)">
+            <i class="{{p.icone}} ico-list"></i> 
+            <span class="item-text">{{p.title}}</span>
+            <ion-icon name="arrow-forward" class="right-arrow"></ion-icon>
+          </li>
+           <li class="info-atendimento " >
+              <h3>{{ campus?.unidade.polo }}</h3>
+              <p class="max-lines-1">{{ campus?.endereco.logradouro }}</p>
+              <p class="max-lines-1">{{ campus?.endereco.descricao }}</p>
+              <p class="max-lines-1">{{ campus?.contato.telefone }}</p>
+              <div class="text-center">
+                  <button class="text-uppercase btn-goto-school bot" style="width: 70%;" (click)="goToEscola()"> ir à escola</button>
+                  <button (click)="callNumberObjetivo()" style="width: 70%;" class="btn-call bot"><i class="ico-phone"></i></button>
+                  <div class="line-ou">
+                          <hr>ou
+                          <hr>
+                  </div>
+                  <h2>{{ campus?.contato.opcional }}</h2>
+              </div>
+          </li> 
+      </ul>
+  </div>
+</ion-content>
+

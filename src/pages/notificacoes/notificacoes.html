@@ -1,0 +1,73 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+  <div class="box-top-app">
+
+    <!-- <ul class="list-notification" >
+      <li
+      *ngFor="let obj of notifications; let i = index"
+      [id]="i" [class]="'reference'+i"
+      (click)="fadeOut($event, i)"
+      >
+        <div class="active" (click)="seen($event)">
+          <div class="row">
+              <i class="ico-notification"></i>
+              <h4 class="max-lines-1" style="width: 80%;">{{ obj?.notificacao.titulo }}</h4>
+              <i class="ico-eraser"></i>
+          </div>
+          <div class="row">
+              <p class="max-lines-2">{{ obj?.notificacao.descricao }}</p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    
+    <div class="text-center message out-message">
+      <p>Nenhuma notificação disponível</p>
+    </div> -->
+
+
+
+
+
+<ion-list class="list-notification">
+    <content-loader *ngIf="loaderContent"></content-loader>
+
+    <ion-item-sliding *ngFor="let obj of notifications; let i = index"[id]="i" [class]="'reference'+i">
+      <ion-item>
+          <div class="active" (click)="seen($event, obj.notificacao.id)">
+              <div class="row">
+                  <i class="ico-notification"></i>
+                  <h4 class="max-lines-1" style="width: 80%;">{{ obj?.notificacao.titulo }}</h4>
+                  <div class="caretNot"><div class="caret-1"></div><div class="caret-2"></div></div>
+              </div>
+              <div class="row">
+                  <p class="max-lines-2">{{ obj?.notificacao.descricao }}</p>
+              </div>
+            </div>
+      </ion-item>
+      <ion-item-options side="right">
+        
+        <!-- <button ion-button color="secondary" (click)="share(item)">
+            <ion-icon name="menu"></ion-icon>
+          Mais
+        </button> -->
+
+        <button ion-button color="danger" (click)="removeItem(obj)">
+            <ion-icon name="trash"></ion-icon>
+            Remover
+        </button>
+
+
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</div>
+
+  <div class="text-center message out-message">
+    <p>Nenhuma notificação disponível</p>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,42 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+
+<ion-content no-bounce>
+    <div class="row align-items-center justify-content-md-center box-center-app" style="padding-right: 0px;">
+        <div class="col">
+
+            <div  *ngIf="usuario" class="input-primary obj-page">
+                    <form action=""
+                    [formGroup]="formEditar"
+                    (ngSubmit)="update( usuario.id )"
+                    >
+                        <div class="col-12 input-box margin-20">
+                            <input type="text" class="form-control input-obj color input-login" [(ngModel)]="usuario.nome" formControlName="nome" placeholder="Nome Sobrenome" disabled>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="col-12 input-box margin-20">
+                            <input type="mail" class="form-control input-obj color input-login" [(ngModel)]="usuario.contato.email" formControlName="email" placeholder="email@objetivo.br">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="col-12 input-box margin-20">
+                            <input type="text" class="form-control input-obj color input-login" [(ngModel)]="usuario.contato.telefone" formControlName="telefone" placeholder="(011) 1234 - 1234">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="col-12 input-box margin-20">
+                            <input type="text" class="form-control input-obj color input-login" [(ngModel)]="usuario.descricao" formControlName="serie" placeholder="8 ano do Ensino Fundamental II" disabled>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="col-12 input-box margin-20">
+                            <input type="text" class="form-control input-obj color input-login" [(ngModel)]="usuario.unidade.colegio" formControlName="colegio" placeholder="Colégio Objetivo – Morumbi" disabled>
+                            <span class="focus-border"></span>
+                        </div>
+                
+                        <div class="col-12 text-center">
+                            <button style="width:70%" class="bot text-uppercase bot-primary margin-40">Salvar</button>
+                        </div>
+                    </form>
+                    
+                </div>
+        </div>
+        
+    </div>
+</ion-content>

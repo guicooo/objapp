@@ -1,0 +1,98 @@
+content-loader {
+  .container-loader {
+    background: #fff;
+    border-radius: 5px;
+    max-width: 769px;
+    margin: 0 auto;
+    }
+    .background {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: preloadAnimation;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+    display: flex;
+    min-height: 100px;
+    }
+    .right {
+    flex: 1;
+    }
+    .image {
+    width: 120px;
+    height: 50px;
+    background: transparent;
+    }
+    .bar {
+    height: 22px;
+    background: transparent;
+    position: relative;
+    width: 100%;
+    }
+    .bar::before {
+    position: absolute;
+    left: 0;
+    height: 22px;
+    // width: 2rem;
+    content: "";
+    background: #fff;
+    }
+    .bar::after {
+    position: absolute;
+    right: 0;
+    height: 22px;
+    content: "";
+    background: #fff;
+    }
+    .bar.medium::after {
+    width: 50%;
+    }
+    .bar.small::after {
+    width: 75%;
+    }
+    .mask {
+    background: #fff;
+    width: 100%;
+    }
+    .thick {
+    height: 1.5rem;
+    }
+    .thin {
+    height: 0.5rem;
+    }
+    @-moz-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @-webkit-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @-o-keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+    }
+    @keyframes preloadAnimation {
+    0% {
+        background-position: -769px 0;
+    }
+    100% {
+        background-position: 769px 0;
+    }
+}
+      
+    
+}

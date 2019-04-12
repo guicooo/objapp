@@ -1,0 +1,78 @@
+@import "../../../app/scss/default";
+
+calendario-eventos {
+
+.list-event {
+    background-color: $primary-light-obj;
+    padding: 0px 15px;
+    margin-bottom: 100px;
+}
+.list-color {
+    margin: 7px 0px;
+    color: $dark-obj;
+    background-color: white;
+    .date {
+        text-align: center;
+        padding: 3px;
+        h4{
+            font-size: 25px;
+            margin: 0;
+            font-weight: bold;
+        }
+        h5{
+            font-size: 13px;
+            margin: 0;
+        }
+    }
+    .titles {
+        padding: 10px;
+        h4{
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        h5{
+            font-size: 13px;
+            margin: 0;
+        }
+    }
+    hr {
+        width: 2px;
+        height: 41px;
+        background-color: lightgrey;
+        margin-top: 10px;
+        margin-bottom: -10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    
+}
+.title-events-today {
+    color: $primary-obj;
+}
+
+.list-event {
+    background: $white;
+  }
+
+.aux-li {
+    display: contents;
+    width: 100%;
+}
+
+// COLORS
+.green .date {
+    border-left: 5px solid $green-obj;
+}
+.orange .date {
+    border-left: 5px solid $orange-obj;
+}
+.red .date {
+    border-left: 5px solid $red-obj;
+}
+.blue .date {
+    border-left: 5px solid $third-obj;
+}
+}

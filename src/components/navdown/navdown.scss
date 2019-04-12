@@ -1,0 +1,53 @@
+navdown {
+    @import "../../app/scss/default";
+
+
+    .navdown {
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        opacity: 0.8;
+        .icons {
+            margin: 0px;
+            text-align: center;
+            list-style-type:none;
+
+            a{
+                padding: 4% 0px 3% 0px;
+            }
+            ion-icon {
+                font-size: 5.7vh;
+                color: $dark-obj;
+                @media #{#{$iphoneX}}{font-size: 4.5vh;}
+
+            }
+            .active {
+                color: $primary-obj !important;
+            }
+        }
+        img {
+            width: 42px;
+        }
+    }
+    
+    .menu-icons {
+        @extend  %gradiente-opacity;
+        position: fixed; 
+        top: 0; 
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 0px 15px 15px 15px;
+    
+    }
+       
+    .header-menu-icons {
+        height: 14vh;
+        text-align: center;
+    }
+       
+
+    
+}

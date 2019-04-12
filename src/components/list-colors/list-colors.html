@@ -1,0 +1,22 @@
+<!-- Generated template for the ListColorsComponent component -->
+<ul style="list-style-type: none;padding: 0;">
+  <li
+  *ngFor="let obj of authorizations"
+  class="row list-color"
+  (click)="goDetails(obj.id)"
+  [class.green]="obj.notificacao.status == 'Autorizado'"
+  [class.orange]="obj.notificacao.status == 'Pendente'"
+  [class.red]="obj.notificacao.status == 'Negado'"
+  >
+    <div class="col-3 date">
+      <h4>{{ obj?.notificacao.diaEvento }}</h4>
+      <h5>{{ obj?.notificacao.mesEvento }}</h5>
+    </div>
+    <hr>
+    <div class="col-7 titles">
+      <h4 class="max-lines-1">{{ obj?.notificacao.titulo }}</h4>
+      <h5>{{ obj?.notificacao.status }}</h5>
+    </div>      
+  </li>
+</ul>
+

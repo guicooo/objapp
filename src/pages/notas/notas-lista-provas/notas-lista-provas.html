@@ -1,0 +1,43 @@
+             
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+    <div class="box-top-app">
+        <div class="col text-center" >
+          <!-- <h2 style="margin-top: 10px;">Provas – {{ nomeMateria }}</h2> -->
+          <h2 style="margin-top: 10px;">Provas - {{ disciplina }}</h2>
+        </div>
+
+        <ul class="list-provas">
+      
+            <li class="row" *ngFor="let obj of listaProvas, let cont = index"
+            [ngStyle]="{
+              'cursor': 'pointer'
+            }"
+            (click)="goDetails(obj.id)"
+            >
+            <div  class="col">
+                    
+                <h4 class="max-lines-1">{{ obj?.rotulo }}</h4>
+            
+                <p *ngIf="obj.notaFinal / obj.notaMaxima > 0.6" 
+                  >Nota: <span class="colorNota" 
+                  [attr.color]="'green'">{{ obj?.notaFinal }}</span>
+                </p>
+                
+                <p *ngIf="obj.notaFinal / obj.notaMaxima >= 0.4 && obj.notaFinal / obj.notaMaxima <= 0.6"
+                  >Nota: <span class="colorNota" 
+                  [attr.color]="'orange'">{{ obj?.notaFinal }}</span>
+                </p>
+                
+                <p *ngIf="obj.notaFinal / obj.notaMaxima < 0.4"
+                >Nota: <span class="colorNota" 
+                  [attr.color]="'red'">{{ obj?.notaFinal }}</span>
+                </p>
+                
+                <div class="caretIcon"><div class="caret-1"></div><div class="caret-2"></div></div>
+            </div>
+         
+            </li>
+        </ul>
+      </div>
+</ion-content>

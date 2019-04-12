@@ -1,0 +1,118 @@
+page-notificacoes {
+
+    ion-item-options {
+        button {
+            ion-icon {
+                color: white;
+                font-size: 4vh;
+            }
+        }
+    }
+
+    .list-notification {
+        padding: 0px;
+        list-style: none;
+        li {
+            padding: 10px;
+            margin: 5px 0px;
+            border-bottom: 2px solid $dark-light-obj;
+            opacity: 0;
+            .ico-notification {
+                color: $dark-obj;
+            }
+            h4{
+                font-weight: normal;
+            }
+    
+        }
+        .active {
+            // background-color: $dark-light-obj;
+            .ico-notification {
+                color: $third-obj;
+            }
+            h4{
+                font-weight: bold;
+            }
+        }
+        .row {
+            margin: 0;
+        }
+        .ico-notification {
+            font-size: 3.5vh;
+            margin-right: 10px;
+        }
+        h4{
+            font-size: 2.2vh;
+            margin-top: 5px;
+            color: $dark-obj;
+        }
+        p {
+            font-size: 2.1vh;
+            margin: 0;
+        }
+        .ico-eraser {
+            color: $red-obj;
+            position: absolute;
+            right: 30px;
+            font-size: 18px;
+            opacity: 0.5;
+          }
+    }
+    
+    
+    .ng-hide-add {
+        -webkit-animation: fadeOutRight 0.6s;
+        animation: fadeOutRight 0.6s;
+        display: 'none';
+    }
+    
+    .out-message{
+        display: none;
+    }
+    
+    .in-message{
+        -webkit-animation: slideInDown 0.6s;
+        animation: slideInDown 0.6s;
+        display: block;
+        
+        p {
+            font-size: 16px;
+        }
+    }
+}   
+
+
+
+    // CARET
+    .caretNot {
+        position: absolute;
+        right: 10px;
+        font-size: 18px;
+        opacity: 0.5;
+        top: 40%;
+        // @media #{#{$iphone5}}{margin-top: 7%;}
+        // @media #{#{$iphone4}}{margin-top: 6% !important;}
+        %caret {
+            width: 12px;
+            height: 2px;
+            background-color: $dark-obj;
+            transition: 0.4s;
+            border-radius: 100px;
+
+        }
+        .caret-1{
+            @extend %caret;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            position: relative;
+            top: 0px;
+        }
+        .caret-2{
+            position: relative;
+            top: 11px;
+            @extend %caret;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg) rotate(0deg) translate(-15px, -15px);
+        }
+   
+    }

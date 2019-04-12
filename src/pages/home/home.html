@@ -1,0 +1,65 @@
+
+      
+
+<ion-content no-bounce>
+
+    <ion-header no-bounce  class="header-app" no-border>
+        <ion-navbar>
+            <i class="ico-burguer" (click)="toggleMenu()"></i>
+            <!-- <i class="ico-atendimento" (click)="voltarPagina()"></i> -->
+            <img class="logo-obj"  src="assets/img/logo-objetivo.svg" alt="Logo Objetivo">
+            <div (click)="openNotificacoes()" class="ico-notification-alert active">   
+            <div class="notification"></div>
+            <div class="animation">
+                <i class="ico-notification ico-animation"></i>
+            </div>
+            </div>
+            
+        </ion-navbar>
+    </ion-header>
+        
+                       
+    <div class="bg-home"></div>
+    <div class="cont-bg-home"><img src="{{appService.base64Image}}" alt="bg-user"></div>
+    <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+
+
+    <div class="row align-items-center justify-content-md-center box-center-app" style="padding-right: 0px; padding-left: 25px;">
+        <div class="container text-home">
+                <h3>
+                    <span>Olá,</span><br>
+                    <strong>{{ nome }}</strong>
+                </h3>
+                <p>{{ usuario?.descricao }}</p>
+                <p>{{ usuario?.unidade.colegio }}</p>
+                <h4 class="text-center" >Sua média geral</h4>
+
+
+
+                <div class="father-circle">
+                        <span style="color: white" class="number-circle">{{ mediaGeral | number:'2.2-2' }}</span>
+                        <round-progress
+                        [current]="mediaGeral | number:'2.2-2'"
+                        [max]="100"
+                        [color]="'#FFF205'"
+                        [background]="'rgba(255, 242, 5, 0.2)'"
+                        [radius]="125"
+                        [stroke]="15"
+                        [rounded]="true"
+                        [clockwise]="true"
+                        [responsive]="true"
+                        [duration]="2000"
+                        [animation]="'easeOutQuart'"
+                        [animationDelay]="0"
+                        >
+                    </round-progress>
+                </div>
+                    
+            
+                <!-- <circle-progress [percent]="mediaGeral | number:'2.2-2' " [color]="'yellow'"></circle-progress> -->
+                <h5 class="text-center" >Para mais detalhes, acesse a aba "notas"</h5>
+                </div>        
+    </div>
+
+
+</ion-content>

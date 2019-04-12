@@ -1,0 +1,62 @@
+<ion-menu [content]="content" type="push" (ionOpen)="menuOpened()" [swipeEnabled]="habilitarMenu" (ionClose)="menuClosed()" slide="left">
+  <ion-header class="">
+    <ion-toolbar style="padding: 0;">
+        <div  class="row header-menu">
+          <div class="col-12">
+            <a (click)="goUser()" menuToggle><ion-icon name="ico-config" class="ico-config"></ion-icon></a>
+            <a (click)="goLogout()" menuToggle class="circle-off"><i class="ico-off"></i></a>
+          </div>
+          <div class="col-12">
+            <div class="circle">
+                <img src="{{appService.base64Image}}" alt="bg-user">
+            </div>
+          </div>          
+          <div class="col-12 text-center">
+            <h3>{{appService.nome}}</h3>
+          </div>  
+        </div>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content no-bounce class="main-menu">
+      <ul class="menu-list">
+        <li menuClose  *ngFor="let p of pages" (click)="openPage(p)">
+          <i class="{{p.icone}}" *ngIf="p.icone != 'logoCO'"></i>
+          <ion-icon *ngIf="p.icone == 'logoCO'" class="icon-ionic" name="ico-{{p.icone}}" ></ion-icon>
+          {{p.title}}
+          <div class="caretMenu"><div class="caret-1"></div><div class="caret-2"></div></div>
+        </li>
+      </ul>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu class="menu-provas" [content]="content" side="right" menuId="menu2" *ngIf="appService.provas && appService.questoes" (ionOpen)="menuOpened()" (ionClose)="menuClosed()">
+  <ion-content>
+    <div class="row">
+      <img src="./assets/img/logo-provas.svg" style="width: 150px;margin: auto;">
+    </div>
+    <div class="col menutitle">
+      <h1>{{ appService.provaAtiva.rotulo }}</h1>
+    </div>
+    <div class="col menutitle">
+        <h2>Nota: {{ appService.provaAtiva.notaFinal }} / {{ appService.provaAtiva.notaMaxima }}</h2>
+      </div>
+    <ion-list>
+      <ion-item (click)="obterQuestaoSidebar(item.id)" *ngFor="let item of appService.questoes">
+        <ion-label>
+          <span class="circle-prova red"></span>
+          <b> {{ item.numero }}.ª</b>  {{ item.tipo == 'Alternativa' ? 'objetiva' : item.tipo.toLowerCase() }}
+        </ion-label>
+      </ion-item>   
+    </ion-list>   
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<navdown *ngIf="!appService.provas && !appService.questoes && habilitarMenu" [navCtrl]="navCtrl"></navdown>
+
+<menu-prova *ngIf="appService.provas && appService.questoes && habilitarMenu" [navCtrl]="navCtrl"></menu-prova>
+

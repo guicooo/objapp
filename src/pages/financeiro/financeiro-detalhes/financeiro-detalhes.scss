@@ -1,0 +1,25 @@
+page-financeiro-detalhes {
+    .detalhes-financeiro{
+        h2 {
+            font-weight: bold;
+            font-size: 4vh;
+        }
+        p {
+            font-size: 2.5vh;
+        }
+    }
+
+    .bot-primary {
+        &:hover {
+            color: white;
+        }
+
+        &:focus {
+            color: white;
+        }
+
+        &:active {
+            color: white;
+        }
+    }
+}

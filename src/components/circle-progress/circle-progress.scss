@@ -1,0 +1,279 @@
+circle-progress {
+    @import "./app/scss/default";
+
+
+
+    $scale: 2.8;
+    $scale4: 2.0;
+    $scale5: 2.3;
+
+.circle-father {
+    padding: 13vh;
+    @media #{#{$iphone4}}{padding: 7vh !important;}
+    @media #{#{$iphone5}}{padding: 9vh;}
+
+    .circle-progress { 
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        -moz-transform: scale($scale);
+        -webkit-transform: scale($scale);
+        -o-transform: scale($scale);
+        -ms-transform: scale($scale);
+        transform: scale($scale);  
+        @media #{#{$iphone4}}{
+          -moz-transform: scale($scale4) !important;
+          -webkit-transform: scale($scale4) !important;
+          -o-transform: scale($scale4) !important;
+          -ms-transform: scale($scale4) !important;
+          transform: scale($scale4) !important;          
+        }
+        @media #{#{$iphone5}}{
+          -moz-transform: scale($scale5);
+          -webkit-transform: scale($scale5);
+          -o-transform: scale($scale5);
+          -ms-transform: scale($scale5);
+          transform: scale($scale5)          
+        }                
+     
+      }
+    
+      .circle-progress__mask {
+        clip: rect(0px, 80px, 80px, 40px);
+        -webkit-backface-visibility: hidden;
+        transition: -webkit-transform 1s;
+        transition: -ms-transform 1s;
+        transition: transform 1s;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      
+      .circle-progress__fill {
+        -webkit-backface-visibility: hidden;
+        transition: -webkit-transform 1s;
+        transition: -ms-transform 1s;
+        transition: transform 1s;
+        border-radius: 50%;
+        clip: rect(0px, 40px, 80px, 0px);
+        width: 80px;
+        height: 80px;
+        position: absolute;
+      }
+      
+      .circle-progress__inset {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        margin-left: 5px;
+        margin-top: 5px;
+        background-color: white;
+        border-radius: 50%;
+        display: table-cell;
+      }
+      
+      .circle-progress__percent {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        font-weight: bold;
+      }
+    
+      .circle-progress[color="primary"]{
+        $color-circle: $primary-obj;
+        $color-text: $primary-obj;
+        $color-circle-fade: rgba($color-circle, .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+      } 
+    
+      .circle-progress[color="third"]{
+        $color-circle: $third-obj;
+        $color-text: $third-obj;
+        $color-circle-fade: rgba($color-circle, .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+      } 
+    
+      .circle-progress[color="orange"]{
+        $color-circle: $orange-obj;
+        $color-text: $orange-obj;
+        $color-circle-fade: rgba($color-circle, .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+      } 
+    
+      .circle-progress[color="green"]{
+        $color-circle: $green-obj;
+        $color-text: $green-obj;
+        $color-circle-fade: rgba($color-circle, .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+      } 
+    
+      .circle-progress[color="red"]{
+        $color-circle: $red-obj;
+        $color-text: $red-obj;
+        $color-circle-fade: rgba($color-circle, .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+      } 
+    
+      .circle-progress[color="yellow"]{
+        $color-circle: $yellow-obj;
+        $color-text: white;
+        $color-circle-fade: rgba($primary-obj , .2);
+    
+        background-color: $color-circle-fade;
+        .circle-progress__fill {background-color: $color-circle;}
+        .circle-progress__percent {color: $color-text;}
+        .circle-progress__inset {background-color: $primary-obj;}
+      } 
+    
+  }
+    
+    
+    // pre-loader
+    
+    .spinner {
+      margin: 100px auto 0;
+      width: 70px;
+      text-align: center;
+    }
+    
+    .spinner > div {
+      width: 5px;
+      height: 5px;
+      background-color: #084688;
+    
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+    
+    .spinner .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+    
+    .spinner .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+    
+    @-webkit-keyframes sk-bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+    
+    @keyframes sk-bouncedelay {
+      0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+      }
+    }
+    
+    .lds-roller {
+      margin: 0px auto 0;
+      width: 70px;
+      text-align: center;
+    }
+    .lds-roller div {
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 32px 32px;
+    }
+    .lds-roller div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: white;
+      margin: -3px 0 0 -3px;
+    }
+    .lds-roller div:nth-child(1) {
+      animation-delay: -0.036s;
+    }
+    .lds-roller div:nth-child(1):after {
+      top: 50px;
+      left: 50px;
+    }
+    .lds-roller div:nth-child(2) {
+      animation-delay: -0.072s;
+    }
+    .lds-roller div:nth-child(2):after {
+      top: 54px;
+      left: 45px;
+    }
+    .lds-roller div:nth-child(3) {
+      animation-delay: -0.108s;
+    }
+    .lds-roller div:nth-child(3):after {
+      top: 57px;
+      left: 39px;
+    }
+    .lds-roller div:nth-child(4) {
+      animation-delay: -0.144s;
+    }
+    .lds-roller div:nth-child(4):after {
+      top: 58px;
+      left: 32px;
+    }
+    .lds-roller div:nth-child(5) {
+      animation-delay: -0.18s;
+    }
+    .lds-roller div:nth-child(5):after {
+      top: 57px;
+      left: 25px;
+    }
+    .lds-roller div:nth-child(6) {
+      animation-delay: -0.216s;
+    }
+    .lds-roller div:nth-child(6):after {
+      top: 54px;
+      left: 19px;
+    }
+    .lds-roller div:nth-child(7) {
+      animation-delay: -0.252s;
+    }
+    .lds-roller div:nth-child(7):after {
+      top: 50px;
+      left: 14px;
+    }
+    .lds-roller div:nth-child(8) {
+      animation-delay: -0.288s;
+    }
+    .lds-roller div:nth-child(8):after {
+      top: 45px;
+      left: 10px;
+    }
+    @keyframes lds-roller {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+}

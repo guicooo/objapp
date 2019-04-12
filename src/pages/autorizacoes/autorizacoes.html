@@ -1,0 +1,13 @@
+             
+<header-obj [navCtrl]="navCtrl"></header-obj>
+<ion-content padding no-bounce >
+  <div class="box-top-app">
+    <div class="title-ico">
+        <i class="ico-autorizacoes"></i>
+        <h2>Autorizações</h2>
+      </div>     
+      <content-loader *ngIf="loaderContent"></content-loader>
+      <list-colors [authorizations]="arrAuthorizations"></list-colors>
+  </div> 
+</ion-content>
+

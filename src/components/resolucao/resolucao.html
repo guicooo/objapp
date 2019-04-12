@@ -1,0 +1,5 @@
+<title-page-prova *ngIf="appService.questaoAtiva" [color]="'orange'" [title]="appService.questaoAtiva.tipo == 'Discursiva' ? 'Resolução' : 'Gabarito'" [hideTrilha]="false"></title-page-prova>
+<div *ngIf="appService.questaoAtiva">
+    <alternativa-prova  [questaoAtiva]="appService.questaoAtiva" *ngIf="appService.questaoAtiva && appService.questaoAtiva.tipo != 'Discursiva'"></alternativa-prova>
+    <dissertativa-prova [questaoAtiva]="appService.questaoAtiva" *ngIf="appService.questaoAtiva && appService.questaoAtiva.tipo == 'Discursiva'"></dissertativa-prova>
+</div>

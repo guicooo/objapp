@@ -1,0 +1,60 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+
+<ion-content padding>
+    <div class="row align-items-center justify-content-md-center box-center-app">
+            <div class="col">    
+                <div class="input-primary obj-page" style="margin-top: 20px;">
+                    <form
+                    [formGroup]="formRedefinir"
+                    (ngSubmit)="redefinir()"
+                    >
+                        <div class="col-12 input-box  margin-20">
+                            <input 
+                            type="password"
+                            class="form-control input-obj color input-login senhaAtual"
+                            formControlName="senhaAtual"
+                            placeholder="Senha atual"
+                            [(ngModel)]="valueSenhaAtual"
+                            (keyup)="onKeyUp()"
+                            >
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="col-12 input-box">
+                            <input 
+                            type="password"
+                            class="form-control input-obj color input-login"
+                            formControlName="novaSenha"
+                            placeholder="Nova senha"
+                            [(ngModel)]="valueNovaSenha"
+                            (focus)="onFocus()"
+                            >
+                            <span class="focus-border"></span>
+                        </div> 
+                        <div class="col-12 input-box  margin-20">        
+                            <input 
+                            type="password"
+                            class="form-control input-obj color input-login"
+                            
+                            formControlName="confirmaSenha"
+                            placeholder="Repetir nova senha"
+                            [(ngModel)]="valueConfirmaSenha"
+                            [class.inputInvalid]="valueNovaSenha != valueConfirmaSenha || valueConfirmaSenha != valueNovaSenha"
+                            (focus)="onFocus()"
+                            >
+                            <span class="focus-border"></span>
+                        </div>
+                        <!-- input-red -->
+
+                        <div class="col-12 text-center">
+                                <button style="width:70%" class="bot text-uppercase bot-primary margin-40">Salvar</button>
+                        </div>            
+                        
+                    </form>
+
+                    <!-- <span class="alert alert-danger" *ngIf="formRedefinir.controls.confirmaSenha.errors?.autenticar">Senha inválida</span> -->
+                    <!-- [class.inputInvalid]="formRedefinir.controls.confirmaSenha.errors?.autenticar" -->
+                </div>
+        </div>
+    </div>
+
+</ion-content>

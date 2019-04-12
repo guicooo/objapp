@@ -1,0 +1,114 @@
+             
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+    <div class="row align-items-center justify-content-md-center box-top-app">
+        <div class="col">
+            <div class="detalhes-provas">
+                <div class="text-center">
+                    <!-- <h2>{{ provaFiltrada?.rotulo }}</h2> -->
+                    <h2>{{ provaFiltrada?.rotulo }}</h2>                    
+                    <!-- <p>Nota</p> -->
+                    <!-- {{ provaFiltrada?.notaFinal }} -->
+
+                <div class="father-circle" style="margin-top: 3vh;" *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima > 0.6">
+                    <div class="father-circle" style="margin-top: 3vh;">
+                        <span style="color: #99CC48" class="number-circle">{{ provaFiltrada?.notaFinal | number:'1.2-2' }}</span>
+                        <!-- <span style="color: #99CC48" class="number-circle">9.75</span> -->
+                        <round-progress
+                            [current]="provaFiltrada?.notaFinal | number:'1.2-2'"
+                            [max]="provaFiltrada?.notaMaxima"                        
+                            [color]="'#99CC48'"
+                            [background]="'rgba(153, 204, 72, 0.2)'"
+                            [radius]="125"
+                            [stroke]="15"
+                            [rounded]="true"
+                            [clockwise]="true"
+                            [responsive]="true"
+                            [duration]="2000"
+                            [animation]="'easeOutQuart'"
+                            [animationDelay]="300"
+                            >
+                        </round-progress>
+                    </div> 
+                </div> 
+                    
+                    <!-- <circle-progress *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima > 0.6" 
+                        [percent]="provaFiltrada?.notaFinal | number:'1.2-2' " 
+                        [color]="'green'">
+                    </circle-progress> -->
+
+
+                <div class="father-circle" style="margin-top: 3vh;" *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima >= 0.4 && provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima <= 0.6">
+                    <span style="color: #FFCB00" class="number-circle">{{ provaFiltrada?.notaFinal | number:'1.2-2' }}</span>
+                    <round-progress
+                        [current]="provaFiltrada?.notaFinal | number:'1.2-2'"
+                        [max]="provaFiltrada?.notaMaxima"
+                        [color]="'#FFCB00'"
+                        [background]="'rgba(255, 203, 0, 0.2)'"
+                        [radius]="125"
+                        [stroke]="15"
+                        [rounded]="true"
+                        [clockwise]="true"
+                        [responsive]="true"
+                        [duration]="2000"
+                        [animation]="'easeOutQuart'"
+                        [animationDelay]="300"
+                        >
+                    </round-progress>
+                </div>                    
+                    
+                    
+                <!-- <circle-progress *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima >= 0.4 && provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima <= 0.6"
+                    [percent]="provaFiltrada?.notaFinal | number:'1.2-2' " 
+                    [color]="'orange'">
+                </circle-progress> -->
+
+
+                <div class="father-circle" style="margin-top: 3vh;" *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima < 0.4">
+                    <span style="color: #FF5252" class="number-circle">{{ provaFiltrada?.notaFinal | number:'1.2-2' }}</span>
+                    <round-progress
+                        [current]="provaFiltrada?.notaFinal | number:'1.2-2'"
+                        [max]="provaFiltrada?.notaMaxima"
+                        [color]="'#FF5252'"
+                        [background]="'rgba(255, 82, 82, 0.2)'"
+                        [radius]="125"
+                        [stroke]="15"
+                        [rounded]="true"
+                        [clockwise]="true"
+                        [responsive]="true"
+                        [duration]="2000"
+                        [animation]="'easeOutQuart'"
+                        [animationDelay]="300"
+                        >
+                    </round-progress>
+                </div>
+                
+                    <!-- <circle-progress *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima < 0.4"
+                        [percent]="provaFiltrada?.notaFinal | number:'1.2-2' " 
+                        [color]="'red'">
+                    </circle-progress> -->
+                
+                    <p> Nota máxima: <span>{{ provaFiltrada?.notaMaxima }}</span></p>
+                    <!-- <p> Nota máxima: <span>10</span></p> -->
+                </div>
+            </div>
+            <div class="notas-provas">
+                <div class="col-4 acertos pull-left">
+                    <span>{{ provaFiltrada?.acertos }}</span>
+                    <p>acertos</p>
+                </div>
+                <div class="col-4 erros pull-left">
+                    <span>{{ provaFiltrada?.erros }}</span>
+                    <p>erros</p>
+                </div>
+                <div class="col-4 parciais pull-left">
+                    <span>{{ provaFiltrada?.parciais }}</span>
+                    <p>parciais</p>
+                </div>
+            </div>
+            <div class="text-center">   
+                <button ion-button (click)="goProvas()" style="width: 70%;" class="text-uppercase bot-primary bot">detalhes</button>
+            </div>            
+        </div>
+    </div>  
+</ion-content>

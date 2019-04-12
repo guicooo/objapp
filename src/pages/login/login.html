@@ -1,0 +1,90 @@
+
+
+<ion-content no-bounce>
+
+<div class="container-fluid">
+  <div class="bg-login"></div>
+  <div class="gradiente-bg"></div>
+  
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-md-center box-login-pai">
+       
+        <div class="col-sm-12">
+            <div class="box-login text-center">
+    
+                <figure>
+                    <h1>
+                  <img src="assets/img/logo-objetivo.svg" alt="logo-objetvo">
+                </h1>
+                </figure>
+                <!-- INPUT LOGIN -->
+                <form [formGroup]="formLogin">
+
+                    <div class="col-auto margin-30">                        
+                        <select formControlName="origem" class="form-control" style="height: calc(3rem + 2px);">
+                            <option value="">Selecione uma origem</option>
+                            <option value="ColegioObjetivo">Colégio Objetivo</option>
+                            <option value="ObjetivoConveniada">Objetivo Conveniada</option>                         
+                        </select>
+                    </div>
+
+                    <div class="col-auto margin-30">
+                        <label class="sr-only" for="inputUser">Nome do usuário</label>
+                        <div class="input-group input-yellow mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text color" 
+                                [ngClass]="{'is-invalid': !formLogin.controls['login'].valid && formLogin.controls['login'].touched}">
+                                    <ion-icon name="ico-user-login"></ion-icon>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control input-obj color input-login" formControlName="login" placeholder="Nome de usuário"
+                            [ngClass]="{'is-invalid': !formLogin.controls['login'].valid && formLogin.controls['login'].touched}">
+                        </div>
+                    </div>
+    
+                    <!-- INPUT SENHA -->
+                    <div class="col-auto margin-20">
+                        <label class="sr-only" for="inputPassword">Senha:</label>
+                        <div class="input-group input-yellow mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text color"
+                                [ngClass]="{'is-invalid': !formLogin.controls['senha'].valid && formLogin.controls['senha'].touched}">
+                                    <ion-icon name="ico-key"></ion-icon>
+                                </div>
+                            </div>
+                            <input type="password" class="form-control input-obj color input-login" formControlName="senha" placeholder="Senha"
+                            [ngClass]="{'is-invalid': !formLogin.controls['senha'].valid && formLogin.controls['senha'].touched}">
+                        </div>
+                    </div>
+                </form>
+    
+                <!-- BOTÂO LOGIN -->
+                <section class="margin-30 bots-login">
+    
+                    <!-- SENHA INVALIDA -->
+                    <span *ngIf="mensagemErro" class="user-invalid">Usuário ou senha inválido.</span>
+                    
+                    <button type="submit" (click)="doLogin()" routerLink="" class="bot bot-login text-uppercase" style="width:70%">Entrar</button>
+                    <!-- <button type="submit" (click)="logarFake()" class="bot bot-login text-uppercase" style="width:70%">Entrar</button> -->
+                    <br>
+                    <p class="or" *ngIf="touchIdAvailable && hasTouchId">ou</p>
+					<button *ngIf="touchIdAvailable && hasTouchId" ion-button full class="touch-id-button" (click)="authViaTouchId()"><ion-icon name="finger-print" color="white" class="icon-finger" item-left></ion-icon> Acessar via {{ technologyAvailable }}</button>
+
+					<p class="or" *ngIf="fingerAuthAvailable && hasFingerAuth">ou</p>
+					<button *ngIf="fingerAuthAvailable && hasFingerAuth" ion-button full class="touch-id-button" (click)="authViaFingerAuth()">Acessar via <ion-icon name="finger-print" class="icon-finger android-icon" color="white" item-left></ion-icon></button>
+                    <!-- <a href="#" style="color: white;">Esqueceu sua senha?</a> -->
+                    <!-- <br>    -->
+
+                    <!-- <button type="submit" routerLink="" class="bot bot-red">
+                        <ion-icon name="ico-google"></ion-icon>Login com o Google</button>
+                    <br>
+                    <button type="submit" routerLink="" class="bot bot-third">
+                        <ion-icon name="ico-face"></ion-icon>Login com o Facebook</button> -->
+                </section>
+    
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</ion-content>

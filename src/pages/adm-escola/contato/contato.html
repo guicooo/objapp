@@ -1,0 +1,23 @@
+             
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+<ion-content padding no-bounce>
+  <div class="row align-items-center justify-content-md-center box-center-app">
+    <div class="col">
+      <div class="call text-center" *ngFor="let obj of filterClass">
+          <div *ngIf="obj.id == idStudent">
+            <h2>{{ obj?.nome }}</h2>
+            <p>{{ obj?.descricao }}</p>
+            <p>Responsável: {{ obj?.responsavel }}</p>
+            <p><b>Contato: (11) 12345-1234</b></p>
+          </div>
+      </div>
+
+      <div class="text-center">
+          <button style="width: 70%;" class="bot-green bot margin-10"><i class="ico-phone"></i></button>
+          
+          <button style="width: 70%;" class="text-uppercase bot-red bot margin-10"> notificar</button>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

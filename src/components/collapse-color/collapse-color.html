@@ -1,0 +1,31 @@
+<a class="row list-color {{ color }}"
+  *ngFor="let obj of listLi; let i = index"
+  [ngClass]="changeCollor(i)"
+ 
+  [attr.data-target]="'#id' + obj.id "
+  data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">  
+    <div class="col-12 header-collapse">
+        {{ obj?.disciplina }}
+    </div>
+    <div class="col-3 date">
+      <h4>{{ obj?.diaEvento }}</h4>
+      <h5>{{ obj?.mesEvento }}</h5>
+    </div>
+    <hr>
+    <div class="col-7 titles">
+      <h4 class="max-lines-1">{{ obj?.titulo }}</h4>
+      <h5 class="">{{ obj?.local.casa }}</h5>
+    </div> 
+
+    <div class="collapse" [id]="'id' + obj?.id">
+      <div class="body-collapse">
+          <p>{{ obj?.descricao }}</p>
+          <p class="max-lines-1 no-margin"><b>Professor: </b>{{ obj?.detalhes.tutor }}</p>
+          <p><b>Valor: </b>{{ obj?.detalhes.notaMaxima }}</p>
+      </div>
+    </div>   
+
+</a>
+
+
+   

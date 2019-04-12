@@ -1,0 +1,45 @@
+<header-obj [navCtrl]="navCtrl"></header-obj>
+<ion-content padding no-bounce >
+  <div class="row align-items-center justify-content-md-center box-top-app">
+    <div class="col">
+
+      <div class="chegando">
+
+        <article class="container-loader" *ngIf="loaderContent">
+          <div class="background">
+            <div class="right">
+              <div class="bar"></div>
+              <div class="mask thick"></div>
+              <div class="bar"></div>
+              <div class="mask thin"></div>
+              <div class="bar medium"></div>
+              <div class="mask thick"></div>
+              <div class="bar small"></div>
+              <div class="bar"></div>              
+            </div>
+          </div>
+        </article>
+          <div class="name margin-40">
+            <h2>{{ nome }}</h2>
+            <p>{{ obj?.descricao }}</p>
+            <p>{{ obj?.unidade.colegio }}</p>
+          </div>
+
+          <h3 class="text-center  margin-40">Aguardando retirada</h3>
+
+        <!-- </div> -->
+
+        <div class="text-center  margin-40">
+          <button  class="text-uppercase bot-green  bot" style="width: 80%;" (click)="showConfirm()"> estou chegando</button>
+
+          <button  class="text-uppercase bot-red bot" style="width: 80%;" (click)="goEscola()"> vou me atrasar</button>
+
+          
+
+        </div>
+    
+      </div> <!-- End class chegando -->
+    </div>
+  </div>
+  
+</ion-content>

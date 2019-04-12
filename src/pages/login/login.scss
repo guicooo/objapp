@@ -1,0 +1,127 @@
+page-login {
+    
+    .bg-login{
+        background-image:url(../assets/img/bg-login.jpg);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .gradiente-bg {
+        @extend %gradiente;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.8;
+    }
+
+    .box-login-pai {
+        height: 100%;
+        position: absolute;
+        width: 96%;
+        @media #{#{$mobile}}{
+            width: 92%;
+        }
+        .box-login {
+            width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            @media #{#{$mobile}}{
+                width: 100%;
+            }
+            hr {
+                width: 135px;
+                margin-top: 13px;
+                margin-right: 20px;
+                margin-left: 20px;
+                background-color: white;
+                height: 1px;
+                @media #{#{$mobile}}{
+                    width: 70px;
+                }
+            }
+        }
+        .form-control {
+            font-size: 16px;
+            &:focus {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .input-login {
+        font-size: 20px;
+        @media #{#{$mobile}}{
+            font-size: 2.5vh;
+        }
+    }
+
+
+    .bot-login {
+        background-color: transparent;
+        border: 2px solid $yellow-obj;
+        color: white;
+        font-size: 20px;
+        &:hover {
+            background-color: $yellow-obj;
+            color: $primary-obj;
+        }
+    }
+    .user-invalid {
+        color : $red-obj;
+        font-weight: bold;
+    }
+
+    .input-group-text {
+        padding: 6px;
+        ion-icon {
+            font-size: 23px;
+            color: $yellow-obj;
+        }
+    }
+    .bots-login {
+        font-size: 15px;
+        ion-icon{
+        font-size: 23px;
+        margin-right: 13px;
+        top: 5px;
+        position: relative;
+        }
+
+        .touch-id-button {
+			color: $white;
+			background: $red;
+            margin-top: 5px;
+            border-radius: 2rem !important;
+		}
+
+		.icon-finger {
+			color: $white;
+			margin-right: 10px;
+            font-size: 23px;
+            top: 0;
+
+			&.android-icon {
+				margin-left: 10px;
+				margin-right: 0;
+			}
+		}
+
+		.or {
+			text-align: center;
+			color: $white;
+			margin-bottom: 0;
+		}
+    }
+}
+
+.loading-ios .loading-spinner + .loading-content, .loading-md .loading-spinner + .loading-content {
+    font-size: 14px;
+}

@@ -1,0 +1,52 @@
+page-notas-detalhes {
+    @import "../../../app/scss/default";
+
+    .box-top-app {
+        margin: 0 auto;
+        padding-bottom: 60px;
+    }
+
+    .detalhes-provas {
+        margin-top: 20px;
+        h2 {
+            font-size: 3.5vh;
+            font-weight: bold;
+        }
+        p {
+            margin: 0;
+            font-size: 3vh;
+            margin-top: 1vh;
+            span {
+                font-weight: bold;
+                font-size: 25px;
+                color: $primary-obj;
+            }
+        }
+    }
+    .notas-provas {
+        text-align: center;
+        margin-top: 2vh;
+        span {
+            font-size: 5.5vh;
+            font-weight: bold;
+            line-height: 1;
+        }
+        p {
+            font-size: 2.8vh;
+        }
+        .acertos{color: $green-obj;}
+        .erros{color: $red-obj;}
+        .parciais{color: $orange-obj;}
+    
+    }
+    .father-circle {
+        width: 180px;
+    }
+    .number-circle {
+        transform: translate(-50%, 67%) !important;
+        font-size: 50px !important;
+    }
+    .button-ios {
+        height: 2.4em;
+    }
+}

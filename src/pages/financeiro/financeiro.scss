@@ -1,0 +1,74 @@
+
+page-financeiro {
+
+    .list-financeiro {
+        padding: 0;
+        .row {
+            padding: 7px 10px;
+        }
+        li {
+            border-bottom: 1px solid $dark-obj;
+            padding: 10px 0px;
+            p {
+                color: $dark-obj;
+                margin: 0;
+                font-style: italic;
+                font-size: 15px;
+            }
+      
+            h4{
+                color: $dark-obj;
+                font-size: 15px;
+                font-weight: bold;
+                margin: 0;
+            }
+            h5{
+                color: $dark-obj;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 8px 0 0 !important;
+
+                &.em-atraso {
+                    color: #ff5555;
+                }
+
+                &.pago{
+                    color: #9ccd4e;
+                }
+
+                &.pendente {
+                    color: #f3c203;
+                }
+       
+            }  
+            .caretIcon {
+                margin-top: 20px;
+            }     
+
+            .circle-status {
+                width: 7px;
+                height: 7px;                
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: -2px;
+
+                &.em-atraso {
+                    background: red;
+                }
+
+                &.pago{
+                    background: green;
+                }
+
+                &.pendente {
+                    background: yellow;
+                }
+            } 
+        }
+    }
+    .red {color: $red-obj !important;}
+    .green {color: $green-obj !important;}
+    .orange {color: $orange-obj !important;}
+    
+}

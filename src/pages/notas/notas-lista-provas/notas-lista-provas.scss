@@ -1,0 +1,33 @@
+page-notas-lista-provas {
+    @import "../../../app/scss/default";
+    h2 {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    .list-provas {
+        padding: 0px 10px;
+        margin-top: 10px;
+        li {
+            border-bottom: 1px solid $dark-obj;
+            padding: 5px 0px;
+            p {
+                color: $dark-obj;
+                margin: 0;
+                font-size: 2.5vh;
+            }
+            .colorNota {
+                font-weight: bold;
+                font-size: 25px;
+            }
+            h4{
+                color: $primary-obj;
+                font-size: 20px;
+                margin: 0;
+                padding-right: 20px;
+            }
+        }
+    }
+    .colorNota[color="red"]{color: $red-obj;}
+    .colorNota[color="green"]{color: $green-obj;}
+    .colorNota[color="orange"]{color: $orange-obj;}
+}

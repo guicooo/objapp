@@ -1,0 +1,53 @@
+             
+<header-obj [navCtrl]="navCtrl"></header-obj>
+<ion-content padding no-bounce>
+    <div class="row align-items-center justify-content-md-center box-center-app">
+        <div *ngIf="appService.notas" class="col text-center">
+
+            
+            <!-- <ion-select interface="action-sheet" [(ngModel)]="id"  (ionChange)="onChangeFake($event)"> -->
+            <ion-select interface="action-sheet" [(ngModel)]="id" [placeholder]="firstDisciplina" (ionChange)="onChangeFilter($event)">
+    
+                <!-- <ion-option
+                    *ngFor="let obj of listaProva"
+                    [attr.selectedText]="cont == 0"
+                    [value]="obj.aproveitamento"> {{ obj.disciplina }}
+                </ion-option> --> 
+                <ion-option
+                    *ngFor="let obj of appService.notas, let cont = index"
+                    [attr.selectedText]="cont == 0"
+                    [attr.disciplinaName]="obj?.disciplina.nome"
+                    [value]="obj?.id"> {{ obj?.disciplina.nome }}
+                </ion-option>                
+    
+            </ion-select>
+            
+            <h5 class="text-center">Aproveitamento</h5>
+
+
+            <div class="father-circle" style="margin-top: 4vh;margin-bottom: 2vh;">
+                <span style="color: #144EA0" class="number-circle">{{ media | number:'1.2-2' }}</span>
+                <round-progress
+                    [current]="media | number:'1.2-2'"
+                    [max]="100"
+                    [color]="'#144EA0'"
+                    [background]="'rgba(20, 78, 160, 0.2)'"
+                    [radius]="125"
+                    [stroke]="15"
+                    [rounded]="true"
+                    [clockwise]="true"
+                    [responsive]="true"
+                    [duration]="2000"
+                    [animation]="'easeOutQuart'"
+                    [animationDelay]="0"
+                    ></round-progress>
+        </div>
+
+            <!-- <circle-progress [percent]="media | number:'1.2-2' " [color]="'third'"></circle-progress> -->
+
+
+            <!-- <h3 class="absences-text">Faltas: {{ currentFaltas }}</h3> -->
+            <button ion-button (click)="goExams()" style="width: 70%;" class="text-uppercase bot-primary bot margin-10">detalhes</button>
+        </div>
+    </div>
+</ion-content>

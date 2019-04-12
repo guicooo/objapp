@@ -1,0 +1,100 @@
+@import "../../../../node_modules/bootstrap/scss/_buttons.scss";
+
+.bot {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: 10px 100px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 2rem !important;
+    margin: 10px 0px;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    @media #{#{$mobile}}{
+        font-size: 2.5vh;
+        padding: 3%  0px;
+        width: 100%;
+    }
+    @media #{#{$iphone4}}{
+        padding: 1%  0px;
+    }  
+}
+.bot-bottom {
+    position: absolute;
+    bottom: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.bot-yellow {
+    background-color: $yellow-obj;
+    color: $primary-obj;
+    &:hover {
+        background-color: transparent;
+        color: $yellow-obj;
+        border: 2px solid $yellow-obj;
+    }
+}
+
+.bot-red {
+    background-color: $red-obj;
+    color: white;
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $red-obj;
+        color: $red-obj;
+    }
+}
+.bot-red-line {
+    color: $red-obj;
+    background-color: transparent;
+    border: 2px solid $red-obj;
+    &:hover {
+        background-color: $red-obj;
+        color: white;
+
+    }
+}
+
+.bot-primary {
+    background-color: $primary-obj !important;
+    color: white;
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $primary-obj;
+    }
+}
+.bot-secound {
+    background-color: $secound-obj;
+    color: white;
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $secound-obj;
+    }
+}
+.bot-third {
+    background-color: $third-obj;
+    color: white;
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $third-obj;
+    }
+}
+.bot-green {
+    background-color: $green-obj;
+    color: white;
+    &:hover {
+        color: $green-obj;
+        background-color: transparent;
+        border: 2px solid $green-obj;
+    }
+}

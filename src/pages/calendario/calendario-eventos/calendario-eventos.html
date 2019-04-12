@@ -1,0 +1,21 @@
+
+<div class="list-event row">
+  <h3 class="title-events-today">Eventos em {{ monthsInPt[monthIndex].toLowerCase() }} de {{ yearIndex }}</h3>
+  <p class="no-events" *ngIf="listEventsSelectedMonth.length == 0">Nenhum evento no mês selecionado</p>
+  <ul class="col" style="list-style-type: none;padding: 0;">
+      <li class="row list-color {{ obj.color }}" *ngFor="let obj of listEventsSelectedMonth">
+        <div class="aux-li" *ngIf="monthIndex == obj.month">
+          <div class="col-3 date">
+            <h4>{{ obj.date }}</h4>
+            <h5>{{ monthsInPt[obj.month] }}</h5>
+          </div>
+          <hr>
+          <div class="col-7 titles">
+            <h4 class="max-lines-1">{{ obj.title }}</h4>
+            <h5 class="max-lines-1">{{ obj.description }}</h5>
+          </div>  
+        </div>    
+      </li>
+  </ul>
+</div>      
+

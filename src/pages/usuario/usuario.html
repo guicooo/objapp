@@ -1,0 +1,54 @@
+
+<header-obj [navCtrl]="navCtrl"></header-obj>
+
+<ion-content no-bounce>
+
+<div class="header-user">
+        <div class="circle">
+            <img src="{{appService.base64Image}}" alt="bg-user">
+            <!-- <input type="file"> -->
+        </div>
+        <span>Alterar foto do perfil</span>
+
+</div>
+<div class="row align-items-center justify-content-md-center">
+  <div class="col">
+    <div class="body-user">
+        <button style="position: absolute;background-color: transparent;top: 0%;height: 32%;left: 14%;" (click)="actionSheet()"></button>
+        <h2 class="max-lines-1">{{ nome }}</h2>
+        <p class="max-lines-1">{{ obj?.descricao }}</p>
+        <p class="max-lines-1">{{ obj?.unidade.colegio }}</p>
+        <p class="max-lines-1">{{ obj?.contato.email }}</p>
+        <p class="max-lines-1">{{ obj?.contato.telefone }}</p>
+
+
+        <div class="text-center">
+            <button (click)="goEditar()" class="bot-secound bot"> 
+                <i class="ico-user-dark"></i>
+                EDITAR CONTA
+            
+            </button>
+            <button (click)="goRedefinir()" class="bot-red bot"> 
+                <i class="ico-key-dark"></i>
+                TROCAR SENHA
+            </button>
+
+
+  
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- <ul class="item-primary show-list" style="padding: 0px;list-style: none;position: absolute;bottom: 9%;width: 100%;">
+       <li  class="list-menu-item openMenu" *ngFor="let item of listMenuUser"> 
+          <a class="row {{ item.link }}"  (click)="goOptionsUser($event)">
+              <i class="ico-{{ item.ico }}"></i>
+              <h4 class="{{ item.link }}">{{ item.title }}</h4>
+          </a>
+          <div class="caretIcon"><div class="caret-1"></div><div class="caret-2"></div></div>
+      </li >
+  
+    </ul> -->
+</ion-content>

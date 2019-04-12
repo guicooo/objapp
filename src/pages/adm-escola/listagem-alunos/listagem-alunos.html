@@ -1,0 +1,72 @@
+<header-obj [navCtrl]="navCtrl" [voltar]="voltar"></header-obj>
+    
+<ion-content padding no-bounce>
+    <div class="box-top-app"  *ngIf="periods" >
+        <div class="header-chegando" [style.display]="listStudents.length > 0 && periods.length > 0 ? 'none' : 'block' ">
+            <i class="ico-chegando"></i>
+            <p>Selecione o período e a turma desejada</p>
+        </div>
+
+        <div class="list-alunos">
+            <div class="row title">
+                <div class="col-12">
+
+
+
+                    <!-- <select class="select-obj" [(ngModel)]="idPeriod" (ngModelChange)="getPeriod($event)">
+                        <option value="0">Selecione o período</option>
+                        <option *ngFor="let obj of periods" [ngValue]="obj.id">{{ obj?.periodo }}</option>
+                    </select> -->
+                    <ion-item>
+                        <ion-select style="font-size: 3.3vh; border-bottom: 0; width: 100%;" interface="action-sheet" [(ngModel)]="idPeriod" (ngModelChange)="getPeriod($event)">
+                            <ion-option value="0">Selecione o período</ion-option>
+                            <ion-option *ngFor="let obj of periods" [value]="obj.id">{{ obj?.periodo }}</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+
+                </div>
+            </div>
+
+            <ion-item>
+                <ion-select style="font-size: 3.3vh; border-bottom: 0; width: 100%;" interface="action-sheet" [(ngModel)]="idCategories" (ngModelChange)="filterStudents($event)">
+                    <ion-option value="0">Selecione uma turma</ion-option>
+                    <ion-option *ngFor="let obj of categories" [value]="obj.id"> {{ obj.descricao }} </ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <!-- <select class="select-obj select-serie" [(ngModel)]="idCategories" (ngModelChange)="filterStudents($event)">
+                <option value="0">Selecione uma turma</option>
+                <option *ngFor="let obj of categories" [ngValue]="obj.id"> {{ obj.descricao }} </option>
+            </select> -->
+
+            <div class="row">
+                <div class="col  text-right">
+                    <p class="number-cont" *ngIf="contador.length > 0">{{ contador.length }}</p>
+                </div>
+            </div>
+
+            <ul>
+
+                <!-- [routerLink]="obj.status == 'Pendente' || obj.status == 'Cancelado' ?  'contato/'+ idCategories +'/'+ obj.id : '/escola' " -->
+                <li class="row" *ngFor="let obj of listStudents | sort: 'referencia'" (click)="goContact(obj.id, idCategories)">
+                    <div class="col-2 no-padding">
+                        <span class="circle" [class.red]="obj.status == 'Cancelado' " [class.orange]="obj.status == 'Pendente' " [class.green]="obj.status == 'Entregue' "></span>
+                    </div>
+
+                    <div class="col-8 title-li">
+                        <h4 class="max-lines-1">{{ obj?.nome }}</h4>
+                        <p>{{ obj?.descricao }}</p>
+                        <p class="max-lines-1">{{ obj?.responsavel }}</p>
+                    </div>
+
+                    <div class="col-2 text-center car" [class.disabled]="obj.status == 'Entregue'"><i class="ico-chegando"></i></div>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</ion-content>

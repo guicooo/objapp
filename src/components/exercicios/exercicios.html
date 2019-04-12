@@ -1,0 +1,15 @@
+<title-page-prova 
+[color]="'yellow'" 
+[title]="titulo" 
+[valores]="appService.exercicios" 
+[hideTrilha]="mostrar"
+(clickEvento)="obterExercicios($event)"></title-page-prova>
+
+<div *ngIf="exercicio">
+    <cabecalho  [questaoAtiva]="exercicio"></cabecalho> 
+    <br>
+    
+    <enunciado  [questaoAtiva]="exercicio"></enunciado>
+    <alternativa [ultimo]="ultimo" [idCorreta]="idCorreta" [questaoAtiva]="exercicio" *ngIf="exercicio.alternativas.length > 0"></alternativa>
+    <dissertativa [ultimo]="ultimo" [questaoAtiva]="exercicio" *ngIf="exercicio.alternativas.length == 0"></dissertativa>
+</div>

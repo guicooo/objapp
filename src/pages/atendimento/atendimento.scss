@@ -1,0 +1,128 @@
+page-atendimento {
+    ion-content {
+        @extend  %gradiente;
+    }
+    .menu-atendimento {
+        list-style: none;
+        padding: 0;
+
+        .atendimento-item {
+            height: auto;
+            background-color: $primary-light-obj;
+            padding: 10px 14px;
+            margin-bottom: 5px;
+            position: relative;
+
+            .ico-list {
+                color: $primary-obj;
+                font-size: 23px;
+                margin-right: 10px;
+                position: relative;
+                top: 5px;
+                @media #{#{$iphone5}}{font-size: 23px;;}
+            }
+
+            .item-text {
+                font-size: 20px;
+                padding: 10px 14px;
+                color: $dark-obj;
+            }
+
+            .right-arrow {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #3679B6;
+                font-size: 20px;
+            }
+
+            
+        }
+
+        // li {
+        //     background-color: $primary-light-obj;
+        //     font-size: 24px;
+        //     padding: 10px 14px;
+        //     color: $dark-obj;
+        //     margin-bottom: 5px;
+        //     @media #{#{$iphone5}}{font-size: 3.0vh;;}
+        //     .ico-list {
+        //         color: $third-obj;
+        //         color: #3679B6;
+        //         font-size: 4vh;
+        //         margin-right: 10px;
+        //         position: relative;
+        //         top: 5px;
+        //         @media #{#{$iphone5}}{font-size: 3.0vh;;}
+        //     }
+        // }
+        .caretMenu {
+            margin-top: 21px;
+            .caret-1, .caret-2{
+                background-color: $dark-obj;
+            }
+        }
+        .info-atendimento {
+            background-color: $primary-light-obj;
+            padding: 12px 12px 5px 12px;
+            h3 {
+                color: $primary-obj;
+                font-size: 19px;
+            }
+            p{
+                margin-bottom: 5px;
+                font-size: 2.6vh;
+            }
+            h2 {
+                color: $primary-obj;
+                font-size: 25px; 
+            }
+            .line-ou {
+                display: inline-flex;
+                color: $third-obj;
+                font-size: 16px;
+                line-height: 13px;
+                hr {
+                    width: 135px;
+                    margin-top: 3%;
+                    margin-right: 20px;
+                    margin-left: 20px;
+                    background-color: $third-obj;
+                    @media #{#{$mobile}}{
+                        width: 74px;
+                    }
+                }
+            }
+
+            .btn-goto-school {
+                background: transparent;
+                color: $primary-obj;
+                border: 2px solid $primary-obj;
+
+                &:hover, &:focus, &:active {
+                    background: $primary-obj;
+                    color: #FFF;
+                }
+            }
+
+            .btn-call {
+                background: transparent;
+                color: #99CC48;
+                border: 2px solid #99CC48;
+
+                &:hover, &:focus, &:active {
+                    background: #99CC48;
+                    color: #FFF;
+                }
+            }
+        
+          }
+    }
+
+    .ico-phone {
+        position: relative;
+        top: 3px;
+    }
+
+}
